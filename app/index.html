@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Paris Sights">
+    <title>My Paris Sights</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" href="styles/offcanvas.css">
+    
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="container-fluid">
+      <!-- when the app is displayed on a small device the list of sights is offcanvas and can be opened by clicking on button-->
+      <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-12 col-sm-10">
+          <p class="pull-left visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Filter sights</button>
+          </p>
+        </div>
+          <div class="col-xs-6 col-sm-3 sidebar-offcanvas send-to-front menu-background" id="sidebar">
+            <h4>My Paris Sights</h4>
+            <form class="form-inline">
+              <input class="form-control" data-bind='value: searchStr, valueUpdate: "afterkeydown"'>
+              <button data-bind="click: filterSights" class="btn btn-success btn-xs">Filter sights</button>
+            </form>
+          
+          <div class="list-group" data-bind="foreach: sightarr">
+            <a href="#" class="list-group-item" data-bind="text: nameofsight, visible: visible, click: $root.entryClicked"></a>
+          </div>
+          
+        </div><!--/.sidebar-offcanvas-->        
+      </div><!--/row-->
+    </div><!--/.container-->
+    <div id="google-map">
+      <div id="map-area"><!-- This is the place for the map delivered by Google Maps --></div>               
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/knockout/dist/knockout.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    <script src="scripts/offcanvas.js"></script>    
+  </body>
+</html>

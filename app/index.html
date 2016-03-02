@@ -34,7 +34,7 @@
       <div class="row row-offcanvas row-offcanvas-left">
         <div class="col-xs-12 col-sm-10">
           <p class="pull-left visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Filter sights</button>
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle filter menu</button>
           </p>
         </div>
           <div class="col-xs-6 col-sm-3 sidebar-offcanvas send-to-front menu-background" id="sidebar">
@@ -51,8 +51,8 @@
         </div><!--/.sidebar-offcanvas-->        
       </div><!--/row-->
     </div><!--/.container-->
-    <div id="google-map">
-      <div id="map-area"><!-- This is the place for the map delivered by Google Maps --></div>               
+    <div class="google-map">
+      <div class="google-map" id="map-area"><!-- This is the place for the map delivered by Google Maps --></div>               
     </div>
 
     <!-- build:js scripts/vendor.js -->
@@ -80,6 +80,7 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
-    <script src="scripts/offcanvas.js"></script>    
+    <script src="scripts/offcanvas.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8ggC1E6GNal6pg_kSZaEw4Xpji0keX14&callback=MapModule.initMap" onerror="MapModule.initMapError()" async defer></script>
   </body>
 </html>

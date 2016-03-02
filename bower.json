@@ -2,7 +2,8 @@
   "name": "p5",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "knockout": "~3.2.0"
   },
   "overrides": {
     "bootstrap": {
